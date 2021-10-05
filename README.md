@@ -1,4 +1,4 @@
-# entity
-An analysis of the evolution of entity
-To spawn food press F key
+Ver Python 3.+
+
+To spawn food press F key<br>
 To spawn entities press Left Arrow key
