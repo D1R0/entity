@@ -1,6 +1,6 @@
 import pygame
 import time
-from entitiy import *
+from entity import *
 pygame.init()
 
 background_colour = (32,33,36)
@@ -24,7 +24,7 @@ while run:
     if time_in_game==0:
         for i in range(500):
            x.append(food(win,x)) 
-    print(len(x))
+    print("len of entities:",len(x))
     time_in_game+=1
     win.fill(background_colour)
     pygame.time.delay(100)
