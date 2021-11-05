@@ -4,6 +4,7 @@ import math
 import os
 
 class mob:
+    
     def __init__(self,win,id,pos_x,pos_y,speed):
         self.id=len(id)
         self.type="mob"
@@ -29,7 +30,7 @@ class mob:
 
     def life(self,win,world_entity,time):
 
-        
+        #Find the new target
         for j in world_entity:
             try:
                 if j.type=="food" and self.hunger==True:
@@ -52,6 +53,7 @@ class mob:
 
         
         try:
+            #Inactive behavior
             if self.target==False:
                 self.h=random.randrange(-1,1)
                 self.v=random.randrange(-1,1)
@@ -66,7 +68,7 @@ class mob:
             if self.find and self.find.id:
                 self.target=True
 
-            #go to eat
+            #Go to target
             if self.target==True and self.find.type!="death":
                 self.m=random.randrange(-1,1)
                 if self.x>self.find.x:
@@ -91,7 +93,7 @@ class mob:
                     else:
                         self.y+=self.w
 
-            #retargetare
+            #Find new target
             elif self.find.type=="death": 
                 self.find=None
                 self.target=False
@@ -109,6 +111,7 @@ class mob:
                 self.hunger=False
                 self.life_span+=(self.life_span-self.life_start)/2
             
+            #Event
             if abs(self.find.x-self.x)<5 and abs(self.find.y-self.y)<5 and self.find.type=="mob":
                 self.target=False
                 self.find=None
