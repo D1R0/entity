@@ -1,4 +1,6 @@
 My first project done in Python in which I used OOP with a year of age.
+Left arrow key to spawn entity
+F key to spawn food
 
 Ver Python 3.+
 
